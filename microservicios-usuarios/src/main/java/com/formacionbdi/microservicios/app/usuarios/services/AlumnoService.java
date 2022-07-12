@@ -1,4 +1,4 @@
-package com.formacionbdi.microservicios.app.usuarios.models.services;
+package com.formacionbdi.microservicios.app.usuarios.services;
 
 import com.formacionbdi.microservicios.app.usuarios.models.entity.Alumno;
 
