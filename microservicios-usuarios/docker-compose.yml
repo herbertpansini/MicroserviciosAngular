@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  db-microservicios-examenes:
+    platform: linux/x86_64
+    container_name: db-microservicios-examenes
+    image: mysql:5.7.31
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: db_microservicios_examenes
+      MYSQL_ROOT_PASSWORD: root
