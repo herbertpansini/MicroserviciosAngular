@@ -23,7 +23,7 @@ public class CursoController extends CommonController<Curso, CursoService> {
     @PutMapping("{id}/asignar-alumnos")
     public ResponseEntity<?> asignarAlumnos(@PathVariable Long id, @RequestBody List<Alumno> alumnos) {
         Optional<Curso> o = this.service.findById(id);
-        if (!o.isPresent()) {
+        if (o.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         Curso curso = o.get();
@@ -34,7 +34,7 @@ public class CursoController extends CommonController<Curso, CursoService> {
     @PutMapping("{id}/eliminar-alumno")
     public ResponseEntity<?> eliminarAlumno(@PathVariable Long id, @RequestBody Alumno alumno) {
         Optional<Curso> o = this.service.findById(id);
-        if (!o.isPresent()) {
+        if (o.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         Curso curso = o.get();
@@ -50,7 +50,7 @@ public class CursoController extends CommonController<Curso, CursoService> {
     @PutMapping("{id}/asignar-examenes")
     public ResponseEntity<?> asignarExamenes(@PathVariable Long id, @RequestBody List<Examen> examenes) {
         Optional<Curso> o = this.service.findById(id);
-        if (!o.isPresent()) {
+        if (o.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         Curso curso = o.get();
@@ -61,7 +61,7 @@ public class CursoController extends CommonController<Curso, CursoService> {
     @PutMapping("{id}/eliminar-examen")
     public ResponseEntity<?> eliminarExamen(@PathVariable Long id, @RequestBody Examen examen) {
         Optional<Curso> o = this.service.findById(id);
-        if (!o.isPresent()) {
+        if (o.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         Curso curso = o.get();
